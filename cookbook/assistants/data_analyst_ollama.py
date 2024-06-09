@@ -1,17 +1,17 @@
 import json
 
-from phi.llm.openai import OpenAIChat
+from phi.llm.ollama import Ollama
 from phi.assistant.duckdb import DuckDbAssistant
 
 data_analyst = DuckDbAssistant(
-    llm=OpenAIChat(model="gpt-4o"),
+    llm=Ollama(model="phi3"),
     semantic_model=json.dumps(
         {
             "tables": [
                 {
                     "name": "movies",
                     "description": "Contains information about movies from IMDB.",
-                    "path": "https://phidata-public.s3.amazonaws.com/demo_data/IMDB-Movie-Data.csv",
+                    "path": "/Users/pdagli/Downloads/IMDB-Movie-Data.csv",
                 }
             ]
         }
