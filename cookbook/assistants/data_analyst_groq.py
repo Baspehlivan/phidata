@@ -1,6 +1,10 @@
 import json
 import os
-os.environ['GROQ_API_KEY'] = "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"
+from dotenv import load_dotenv
+
+load_dotenv()  # take environment variables from .env.
+
+api_key = os.getenv('GROQ_API_KEY')
 
 from phi.llm.groq import Groq
 from phi.assistant.duckdb import DuckDbAssistant
